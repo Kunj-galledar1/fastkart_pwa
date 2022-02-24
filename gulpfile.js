@@ -28,7 +28,7 @@ gulp
 // Watch function
 function watch() {
   browserSync.init({
-    proxy: "localhost/fastkart-pwa/index.html",
+    proxy: "localhost/fastkart_pwa/index.html",
   });
   gulp.watch("front-end/assets/scss/**/*.scss", style);
   gulp.watch("**/*.html").on("change", browserSync.reload);

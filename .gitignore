@@ -1,5 +1,5 @@
 *.map
-gulp.js
+gulpfile.js
 package.json
 package-lock.json
 .history
