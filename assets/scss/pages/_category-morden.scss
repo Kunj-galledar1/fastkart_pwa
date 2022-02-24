@@ -1,0 +1,165 @@
+/*=====================
+ 4.7  Catagories  Morden Page CSS 
+==========================*/
+.catagories-morden {
+  .search-box {
+    @include search-box;
+  }
+  .catagories-wrap {
+    .list-group {
+      position: sticky;
+      top: 15px;
+      padding: 30px 20px;
+      border-radius: 15px;
+      background-color: $theme-light-color;
+      h2 {
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+    }
+    .list-group-item {
+      border: none;
+      background-color: transparent;
+      font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+      padding: 8px 0;
+      color: $content-color;
+      &.active {
+        color: $theme-color;
+      }
+    }
+    .content {
+      &:not(:first-of-type) {
+        padding-top: 35px;
+      }
+      > h3 {
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+      .staples-box {
+        text-align: center;
+        > div {
+          background-color: $grey-light;
+          border-radius: 6px;
+          padding: calc(15px + (25 - 15) * ((100vw - 320px) / (1920 - 320)));
+          img {
+            width: 100%;
+          }
+        }
+        h4 {
+          margin-top: calc(6px + (10 - 6) * ((100vw - 320px) / (1920 - 320)));
+          font-size: calc(12px + (14 - 12) * ((100vw - 320px) / (1920 - 320)));
+          color: $title-color;
+          font-weight: 400;
+        }
+      }
+    }
+    > .row {
+      > div {
+        @media only screen and (max-width: 475px) {
+          width: 100%;
+          &:first-of-type {
+            position: fixed;
+            background-color: $white;
+            border-radius: 15px;
+            transition: all 0.3s;
+            min-width: 200px;
+            max-width: 188px;
+            height: 163px;
+            left: 17px;
+            bottom: 85px;
+            overflow-y: scroll;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 6;
+            padding: 8px 22px;
+
+            [dir="rtl"] & {
+              left: unset;
+              right: 17px;
+            }
+            .list-group {
+              position: relative;
+              background-color: transparent;
+              padding: 0;
+              top: 0;
+              h2 {
+                display: none;
+              }
+            }
+            &.show {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+          &:last-of-type {
+            .content {
+              .row {
+                > div {
+                  flex: 0 0 auto;
+                  width: 33.33333%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/// Catagories Menu ///
+.toggle {
+  .catagories-menu {
+    z-index: 5;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: $theme-color;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    bottom: 86px;
+    left: 25px;
+    font-size: 12px;
+    display: none;
+    color: $white;
+    [class="dark"] & {
+      color: $white-text-dark;
+    }
+    [dir="rtl"] & {
+      left: unset;
+      right: 25px;
+    }
+    @media only screen and (max-width: 475px) {
+      display: flex;
+    }
+    svg {
+      width: 20px;
+      height: 20px;
+      stroke: $white;
+      [class="dark"] & {
+        stroke: $white-text-dark;
+      }
+    }
+  }
+  .overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba($title-color, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 5;
+    transition: all 0.5s ease;
+    [class="dark"] & {
+      background: rgba($title-dark-color, 0.7);
+    }
+    &.show {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

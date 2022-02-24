@@ -1,0 +1,73 @@
+/*=====================
+  1.1 Reset CSS 
+==========================*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 16px;
+}
+
+body {
+  position: relative;
+  font-size: 14px;
+  margin: 0;
+  color: $title-color;
+  background-color: $white;
+  &::before {
+    display: none;
+    content: "";
+    background-color: rgba($black, 0.3);
+    z-index: 5;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+  }
+  &.bluer {
+    > * {
+      filter: blur(2px);
+    }
+    .header-sidebar,
+    #myScrollspy,
+    .offcanvas {
+      filter: unset !important;
+    }
+    &::before {
+      display: block;
+    }
+  }
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+  @media only screen and (min-width: 767px) {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+button {
+  border: none;
+  outline: none;
+  background-color: unset;
+}
+
+ul {
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 0;
+}
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
